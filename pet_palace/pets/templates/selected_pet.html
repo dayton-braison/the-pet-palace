@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %}The Pet Palace | {{pet_details.name}}{% endblock %}
+
+{% block content %}
+<section class="pet-details-container">
+    <div class="card me-4 ms-4">
+        <img class="pet-details-image card-img-top" src="{{pet_details.image.url}}" alt="">
+        <div class="card-body pet-details-text">
+            <h4 class="pet-details-header card-title">{{pet_details.name}}</h4>
+            <p class="pet-details">{{pet_details.breed}}</p>
+            <p class="pet-details">{{pet_details.description}}</p>
+            <p class="pet-details price">${{pet_details.price}}</p>
+            <a href="{% url 'add-to-cart' pet_details.id %}">
+                <button class="add-to-cart-button">Add to Cart</button>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="cart-info-container">
+    {% if cart_items %}
+    <h6 class="cart-info-header">Order Summary</h>
+    <hr>
+    <table class="table table-sm table-striped">
+        <thead class="order-summary-thead">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Product</th>
+                <th scope="col">Pet Breed</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <br>
+        <tbody class="order-summary-text">
+            {% for item in cart_items %}
+            <tr scope="row">
+                <td class="p-0 m-0">{{item.product.name}}</td>
+                <td class="order-summary-text pe-1">{{item.product.category}}</td>
+                <td class="order-summary-text pe-1">{{item.product.breed}}</td>
+                <td class="order-summary-text pe-1">{{item.quantity}}</td>
+                <td class="order-summary-text pe-1">${{item.product.price}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p class="empty-cart-text">Your cart is empty. Add to your cart so you can checkout.</p>
+    {% endif %}
+</section>
+
+
+{% endblock %}

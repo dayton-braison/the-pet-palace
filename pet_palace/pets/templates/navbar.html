@@ -1,0 +1,28 @@
+{% load static %}
+<header class="navbar-expand-sm sticky-top">
+    <nav class="navbar">
+        <div class="container">
+        <h4 class="nav navbar-collapse pet-palace-header ms-2 justify-content-center">
+            The Pet Palace
+            <img src="{% static 'images/logo.png' %}" class="logo" alt="Animated dog wearing a crown">
+        </h4>
+        <ul class="nav navbar-collapse nav-links">
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'pet-palace' %}">Home</a></li>
+            
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+            <li class="cart-icon">
+                <a href="{% url 'shopping-cart' %}">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+            </li>
+            {% else %}
+            <li><a href="{% url 'register' %}">Sign Up</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+</header>
+
+

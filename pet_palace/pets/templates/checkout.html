@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}The Pet Palace | Checkout{% endblock %}
+
+{% block content %}
+<section class="checkout-container">
+    <h5 class="checkout-header">Checkout</h5>
+    <h6 class="checkout-order-summary-header">Order Summary</h6>
+    <hr>
+    {% if cart_items %}
+    {% for item in cart_items %}
+        <p class="checkout-order-details"> <strong>Name:</strong> {{item.product.name}}</p>
+        <p class="checkout-order-details"> <strong>Category:</strong> {{item.product.category}}</p>
+        <p class="checkout-order-details"> <strong>Breed:</strong> {{item.product.breed}}</p>
+        <p class="checkout-order-details"> <strong>Qty & Price:</strong> {{item.quantity}} x ${{item.product.price}}</p>
+        <hr>
+    {% endfor %}
+</section>
+
+<h6 class="checkout-order-total-header">Order Total: ${{total_price}}</h6>
+<br>
+<section class="checkout-form">
+    <form method="post">
+        {% csrf_token %}
+        <div class="input-container">
+            <label for="name">Name on Card:</label>
+            <input type="text" id="name" name="name" required>
+            <br>
+        
+            <label for="card_number">Card Number:</label>
+            <input type="text" id="card_number" name="card_number" required>
+            <br>
+        
+            <label for="expiration">Expiration Date:</label>
+            <input type="text" id="expiration" name="expiration" required>
+            <br>
+        
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" required>
+            <br>
+        </div>
+        <button class="pay-button">Pay Now</button>
+    </form>
+    {% else %}
+    <p class="checkout-text">You need to add to your before you can checkout.</p>
+    {% endif %}
+</section>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}The Pet Palace | Home{% endblock %}
+
+{% block content %}
+    {% if categories %}
+    <section class="home-product-grid">
+        {% for category in categories %}
+        <div class="home-product-card card m-3">
+            <a class="home-category-link" href="{% url 'selected_pet_list' category_name=category.name %}">
+                <img class="home-product-image card-img-top" src="{{category.image.url}}" alt="Pet Image">
+            </a>
+            <div class="card-body">
+                <a class="home-category-link" href="{% url 'selected_pet_list' category_name=category.name %}">
+                <h5 class="card-title"><strong>{{category.name}}</strong></h5>
+                </a>
+                <a class="btn-link" href="{% url 'selected_pet_list' category_name=category.name %}"><button class="shop-button">Shop</button>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+    {% endif %}
+{% endblock %}

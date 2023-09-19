@@ -1,0 +1,513 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&family=Redressed&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    background: url('../images/dogs-bg.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    font-family:  Arial, sans-serif;
+}
+
+
+
+/* ---- HEADER & NAVBAR ---- */
+header {
+    background-color: #7fc8f8;
+}
+
+.nav-links {
+    list-style: none;
+    font-size: 1.3rem;
+    text-shadow: 2px 2px 4px #333;
+    justify-content: center;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    margin-left: 40px;
+}
+
+.pet-palace-header {
+    color: #fff;
+    text-shadow: 2px 2px 4px #333;
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-family: 'Redressed', cursive;
+}
+
+.logo {
+    max-width: 50px;
+}
+
+
+/* ------ HOME.HTML ----- */
+.home-product-grid {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    text-align: center;
+}
+
+.home-product-card {
+    background-color: #f5f5f5;
+    max-width: 500px;
+    min-width: 280px;
+    box-shadow: 10px 10px 18px 1px rgba(0, 0, 0, 0.51);
+}
+
+.home-product-image {
+    max-width: 650px;
+}
+
+a .card-title {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.home-category-link {
+    text-decoration: none;
+}
+
+.shop-button {
+    display: block;
+    margin: 0 auto;
+    background-color: #7fc8f8;
+    width: 50%;
+    padding: 4px 6px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: larger;
+    font-weight: 500;
+    
+}
+
+.card-body .btn-link {
+    text-decoration: none;
+}
+
+.shop-button:hover,
+.shop-button:focus {
+    transform: scale(1.07);
+}
+
+/* ----- SELECTED_PET_LIST.HTML ----- */
+.pets-product-grid {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    text-align: center;
+}
+
+.pets-product-card {
+    background-color: #f5f5f5;
+    max-width: 350px;
+    min-width: 280px;
+    margin-top: 15px;
+    box-shadow: 10px 10px 18px 1px rgba(0, 0, 0, 0.51);
+}
+
+.pets-category-name {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pets-product-image {
+    max-width: 500px;
+}
+
+.pets-product-name {
+    text-decoration: none;
+}
+
+.price {
+    font-weight: 600;
+    font-size: large;
+}
+
+/* ---- SELECTED_PET.HTML ----- */
+.pet-details-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.card {
+    max-width: 400px;
+    box-shadow: 10px 10px 18px 1px rgba(0, 0, 0, 0.4);    
+}
+
+.pet-details-text {
+    text-align: center;
+}
+
+.add-to-cart-button {
+    background-color: #7fc8f8;
+    width: 50%;
+    padding: 4px 6px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: large;
+    font-weight: 500;
+}
+
+.add-to-cart-button:hover,
+.add-to-cart-button:focus {
+    transform: scale(1.07);
+}
+
+.order-summary-thead {
+    font-size: medium;
+}
+
+.order-summary-text {
+    font-size: .9rem;
+}
+
+.cart-info-header {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.cart-info-container {
+    padding: 0 20px;
+}
+
+.empty-cart-text {
+    margin-top: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/* ----- SHOPPING_CART.HTML ----- */
+.cart-container {
+    max-width: 650px;
+    min-height: 100%;
+    padding: 0 20px;
+}
+
+.shopping-cart-header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+hr {
+    width: 100%;
+}
+
+.cart-thead {
+    font-size: .91rem;
+}
+
+.cart-table-text {
+    font-weight: 500;
+    font-size: .87rem;
+}
+
+.checkout-button {
+    display: block;
+    margin: 40px auto 15px;
+    background-color: #7fc8f8;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.checkout-button:hover,
+.checkout-button:focus {
+    transform: scale(1.07);
+}
+
+.continue-shopping-button {
+    display: block;
+    margin: 0 auto 100px;
+    background-color: #7fc8f8;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.continue-shopping-button:hover,
+.continue-shopping-button:focus {
+    transform: scale(1.07);
+}
+
+
+.cart-link-text {
+    text-decoration: none;
+}
+
+.empty-cart-container {
+    height: 100vh;
+}
+
+.empty-cart-text {
+    margin-top: 30px;
+}
+
+/* ----- CHECKOUT.HTML ----- */
+.checkout-container {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.checkout-header {
+    margin-top: 25px;
+    padding-left: 5px;
+}
+
+.checkout-order-summary-header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.checkout-order-details {
+    text-align: center;
+}
+
+.checkout-order-total-header {
+    text-align: center;
+}
+
+.checkout-form {
+    text-align: center;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-weight: 600;
+    width: 100%;
+}
+
+.input-container input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.pay-button {
+    background-color: #7fc8f8;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.pay-button:hover,
+.pay-button:focus {
+    transform: scale(1.07);
+}
+
+/* ----- CHECKOUT_SUCCESS.HTML ----- */
+.success-container {
+    text-align: center;
+    height: 100vh;
+}
+
+.success-header {
+    margin-top: 70px;
+}
+
+/* ------ FOOTER ------ */
+.logo-link {
+    display: none;
+}
+
+/* ----- LOGIN.HTML & REGISTER.HTML ----- */
+.login-container {
+    text-align: center;
+    margin-top: 40px;
+    height: 100%;
+}
+
+.login-input {
+    display: block;
+    margin: 0 auto;
+}
+
+.login-label {
+    display: block;
+    margin: 10px 0 15px 0;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #333;
+}
+
+.login-header {
+    margin-bottom: 15px;
+}
+
+.guest-credentials {
+    font-weight: 500;
+}
+
+.form-control:focus {
+    transform: scale(1.07);
+}
+
+.login-button {
+    margin-top: 20px;
+    background-color: #7fc8f8;
+    padding: 8px 25px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.login-button:hover,
+.login-button:focus {
+    transform: scale(1.07);
+}
+
+.login-text,
+.login-text a {
+    margin-top: 25px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.signup-container {
+    text-align: center;
+    margin-top: 40px;
+    height: 100%;
+}
+
+.signup-label {
+    display: block;
+    margin: 25px 0 15px 0;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #333;
+}
+
+
+.signup-button {
+    display: block;
+    margin: 25px auto;
+    background-color: #7fc8f8;
+    padding: 8px 25px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.signup-button:hover,
+.signup-button:focus {
+    transform: scale(1.07);
+}
+
+.signup-text,
+.signup-text a {
+    margin-top: 25px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+/* ----- DJANGO MESSAGE ----- */
+.django-message {
+    text-align: center;
+    font-weight: 500;
+}
+
+footer {
+    padding: 10px;
+    margin-top: 20px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #333;
+    background-color: #7fc8f8;
+}
+
+
+/* ----- MEDIA QUERIES ----- */
+@media only screen and (min-width: 600px) {
+    .nav-links {
+        font-size: 1.6rem;
+    }
+
+    .pet-palace-header {
+        font-size: 2rem;
+    }
+
+    .home-product-grid,
+    .pets-product-grid {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        width: 400px;
+    }
+    
+    .pets-product-image {
+        max-height: 400px;
+    }
+
+    .pet-details-container {
+        width: 500px;
+        margin: 0 auto;
+    }
+
+    .cart-container {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    .shopping-cart-header {
+        font-size: 1.8rem;
+    }
+
+    .cart-table-text {
+        font-size: 1rem;
+    }
+
+    .signup-container,
+    .login-container {
+        max-width: 650px;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    .signup-header,
+    .login-header {
+        margin-top: 25px;
+    }
+
+    .empty-cart-text {
+        font-size: 1.4rem;
+    }
+
+}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}The Pet Palace | Login{% endblock %}
+
+{% block content %}
+<section class="login-container">
+    <h4 class="login-header">Login</h4>
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <p class="guest-credentials">Guest credentials</p>
+        <p class="guest-credentials">Username: guest</p>
+        <p class="guest-credentials">Password: petpalace1</p>
+        <br>
+        <div class="ms-4 me-4">
+            <label class="login-label" for="">Username</label>
+            <input class="login-input form-control" type="text" name="username" placeholder="Enter your username....">
+            <br>
+            <label class="login-label" for="">Password</label>
+            <input class="login-input form-control" type="password" name="password" placeholder="Enter your password....">
+        </div>
+        <button class="login-button" type="submit">Sign in</button>
+    </form>
+    <p class="login-text">Don't have an account? <a href="{% url 'register' %}">Create an account</a></p>
+</section>
+{% endblock %}

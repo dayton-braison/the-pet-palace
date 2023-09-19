@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}The Pet Palace | {{category_name}}{% endblock %}
+
+{% block content %}
+<h4 class="pets-category-name"><strong>{{category_name | title}}</strong></h4>
+<section class="pets-product-grid">
+    {% for pet in pet_list %}
+    <div class="pets-product-card card me-4 ms-4">
+            <a class="" href="{% url 'selected_pet' category_name=pet.category pet_name=pet.name %}">
+                <img class="pets-product-image card-img-top" src="{{pet.image.url}}" alt="Pet Image">
+            </a>
+        <div class="card-body">
+            <a href="" class="pets-product-name">
+                <h5 class="card-title"><strong>{{pet.name}}</strong></h5>
+            </a>
+            <p class="pets-product-details">{{pet.breed}}</p>
+            <p class="pets-product-details price">${{pet.price}}</p>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}The Pet Palace | Cart{% endblock %}
+
+{% block content %}
+{% if cart_items %}
+<section class="cart-container">
+    <h6 class="shopping-cart-header">Your Shopping Cart</h6>
+    <hr>
+    <table class="table table-sm table-striped mt-4">
+        <thead class="cart-thead">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Pet Breed</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                </tr>
+            </thead>
+            <tbody class="cart-table-text">
+                {% for item in cart_items %}
+                <tr scope="row">
+                    <td>{{item.product.name}}</td>
+                    <td>{{item.product.category}}</td>
+                    <td>{{item.product.breed}}</td>
+                    <td>{{item.quantity}}</td>
+                    <td>${{item.product.price}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="button-container">
+            <a class="cart-link-text" href="{% url 'checkout' %}">
+                <button class="checkout-button">Proceed to checkout</button>
+            </a>
+            <a class="cart-link-text" href="{% url 'home' %}">
+                <button class="continue-shopping-button">Continue Shopping</button>
+            </a>
+        </div>
+</section>
+    {% else %}
+    <section class="empty-cart-container">        
+        <p class="empty-cart-text">Your cart is empty. Add to your cart so you can checkout.</p>
+    </section>
+    {% endif %}
+
+{% endblock %}
